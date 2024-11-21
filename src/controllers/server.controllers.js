@@ -1,12 +1,17 @@
+import { Request } from "../models/request.models";
 
 
-
-const getRequest = (req, res) => {
+const getRequest = async(req, res) => {
+ const message = await Request.find()
+ res.status(200).json({message})
 
 
 };
-const postRequest = (req, res) => {
-    
+const postRequest = async(req, res) => {
+    const {message} = req.body
+    Request.create({message})
+    res.status(201).json({message})
+
 };
 const putRequest = (req, res) => {
   res.status(202).json({ message: "Updated" });
