@@ -1,5 +1,5 @@
-import express, { json } from "express";
-import dotenv, { config } from "dotenv";
+import express from "express";
+import dotenv from "dotenv";
 import ServerRouter from "./routes/server.routes.js";
 import dbConnection from "./db/db.connection.js"
 
