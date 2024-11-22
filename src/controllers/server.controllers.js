@@ -6,7 +6,10 @@ const getRequest = async (req, res) => {
 };
 const postRequest = async (req, res) => {
   const { message } = req.body;
-  Request.create({ message });
+  const newMessage = new Request({message})
+ await newMessage.save().then(newMessage => console.log(newMessage)
+ ).catch(error => console.log(error)
+ )
   res.status(201).json({ message: 'Created' });
 };
 const putRequest = async (req, res) => {
